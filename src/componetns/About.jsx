@@ -80,7 +80,7 @@ export const About = () => {
               background: "linear-gradient(90deg, #8245ec, #a855f7)",
               boxShadow: "0 0 2px #8245ec , 0 0 40px #8245ec",
             }}
-            href="https://drive.google.com/file/d/1MmAqG8THsuRYMVt0OAtZHnj9--2bDktu/preview"
+            href="https://drive.google.com/file/d/1rgVMq-GczD4Uuk5xMEIfl3jUP1X8jKIY/view?usp=sharing"
           >
             DOWNLOAD CV
           </a>
