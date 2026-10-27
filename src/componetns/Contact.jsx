@@ -65,7 +65,7 @@ export const Contact = () => {
         <h2 className="text-4xl font-bold text-white">CONTACT</h2>
         <div className="w-32 h-1 bg-indigo-600 rounded-2xl mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-sm font-semibold">
-          Let's connect — I'm always open to new ideas, feedback, or a friendly chat!
+        I'm open to software engineering opportunities, professional connections, and discussions about software development and technology. Feel free to reach out!
         </p>
       </div>
 
