@@ -17,4 +17,52 @@ html{
     }
 }
 
+.light-theme .text-white {
+    color: #1e293b;
+}
+
+.light-theme .text-gray-300 {
+    color: #475569;
+}
+
+.light-theme .text-gray-400 {
+    color: #475569;
+}
+
+.light-theme .text-gray-500 {
+    color: #64748b;
+}
+
+.light-theme .bg-gray-900 {
+    background-color: #ffffff;
+}
+
+.light-theme .bg-skills-gradient {
+    background-image: none;
+}
+
+.light-theme [class~="bg-[#131025]"] {
+    background-color: #f1f5f9;
+}
+
+.light-theme [class~="bg-[#251f38]"] {
+    background-color: #ede9fe;
+}
+
+.light-theme .border-white,
+.light-theme .border-gray-700,
+.light-theme .border-gray-600,
+.light-theme .border-gray-300 {
+    border-color: #cbd5e1;
+}
+
+.light-theme #experience .absolute {
+    background-color: #cbd5e1;
+}
+
+.light-theme .portfolio-grid {
+    background-image:
+        linear-gradient(to right, #64748b1a 1px, transparent 1px),
+        linear-gradient(to bottom, #64748b1a 1px, transparent 1px);
+}
 

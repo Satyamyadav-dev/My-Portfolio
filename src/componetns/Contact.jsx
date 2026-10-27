@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
+import { FaEnvelope } from 'react-icons/fa';
 
 export const Contact = () => {
 
@@ -14,7 +15,7 @@ export const Contact = () => {
 
     // emailjs API to send the email
     emailjs.sendForm(
-      "service_1sgudmd",       // emailjs service_id created from Emailjs
+      "service_g3mlrzg",       // emailjs service_id created from Emailjs
       "template_6htueqg",      // emailjs template_id created from Emailjs
       formRef.current,         // your form ref 
       "bMic0JYdcXE3PRDxU"      // emailjs public key  from account in Emailjs
@@ -66,6 +67,16 @@ export const Contact = () => {
         <p className="text-gray-400 mt-4 text-sm font-semibold">
           Let's connect — I'm always open to new ideas, feedback, or a friendly chat!
         </p>
+      </div>
+
+      <div className="w-fit mx-auto mb-8 flex items-center gap-3 rounded-lg border border-gray-700 bg-gray-900 px-5 py-3 text-gray-300">
+        <FaEnvelope className="text-indigo-400" aria-hidden="true" />
+        <a
+          href="mailto:yadavsatyam2031@gmail.com"
+          className="text-sm hover:text-indigo-400 transition-colors"
+        >
+          yadavsatyam2031@gmail.com
+        </a>
       </div>
 
       {/* contact form */}

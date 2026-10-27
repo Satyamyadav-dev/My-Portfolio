@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-export const Navbar = () => {
+export const Navbar = ({ isDarkMode, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsscrolled] = useState(false)
@@ -40,10 +40,13 @@ const handleMenuItemClick = (sectionId) => {
 
 
   return (
-    <nav className={`fixed top-0 z-50 w-full transition duration-300 px-[7vw] md:px-[7vw] ${isScrolled ? 
- "   bg-[#1f1b3a]  bg-opacity-90 backdrop-blur-md shadow-md" : "bg-black"}`}>
+    <nav className={`fixed top-0 z-50 w-full transition duration-300 px-[7vw] md:px-[7vw] ${
+      isDarkMode
+        ? isScrolled ? "bg-[#1f1b3a]/90 backdrop-blur-md shadow-md" : "bg-black"
+        : "bg-slate-50/90 backdrop-blur-md shadow-md"
+    }`}>
 
-      <div className="py-2 text-gray-300 flex justify-between items-center">
+      <div className={`py-2 flex justify-between items-center ${isDarkMode ? 'text-gray-300' : 'text-slate-700'}`}>
         {/* logo */}
         <div className="   text-lg font-semibold cursor-pointer">
           <span className="text-indigo-600">&lt;</span>
@@ -65,17 +68,35 @@ const handleMenuItemClick = (sectionId) => {
         </ul>
 
         {/* social media icons */}
-        <div className='hidden md:flex space-x-4'>
-          <a className='text-gray-300 hover:text-indigo-500' href="https://github.com/Satyamyadav-dev" target="blank" relation="noopener noreferrer">
+        <div className='hidden md:flex space-x-4 items-center'>
+          <a className={`hover:text-indigo-500 ${isDarkMode ? 'text-gray-300' : 'text-slate-700'}`} href="https://github.com/Satyamyadav-dev" target="blank" relation="noopener noreferrer">
             <FaGithub size={24} />
           </a>
-          <a className='text-gray-300 hover:text-indigo-500' href="https://www.linkedin.com/in/satyam-yadav-99ab822a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+          <a className={`hover:text-indigo-500 ${isDarkMode ? 'text-gray-300' : 'text-slate-700'}`} href="https://www.linkedin.com/in/satyam-yadav-99ab822a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={24} />
           </a>
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            className={`p-1 rounded-full transition-colors hover:text-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ${isDarkMode ? 'text-gray-300' : 'text-slate-700'}`}
+            aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+            title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+          >
+            {isDarkMode ? <FiSun size={22} /> : <FiMoon size={22} />}
+          </button>
         </div>
 
         {/* mobile menu  icon added*/}
-        <div className='md:hidden'>
+        <div className='md:hidden flex items-center gap-4'>
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            className={`p-1 rounded-full transition-colors hover:text-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ${isDarkMode ? 'text-gray-300' : 'text-slate-700'}`}
+            aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+            title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+          >
+            {isDarkMode ? <FiSun size={22} /> : <FiMoon size={22} />}
+          </button>
           {
             isOpen ? (
               <FiX className='text-3xl text-indigo-500 cursor-pointer'
@@ -93,11 +114,11 @@ const handleMenuItemClick = (sectionId) => {
 
       {
         isOpen && (
-          <div className="absolute p-6  top-15 left-1/2 transform bg-blue-300/50 bg-opacity-100  backdrop-filter backdrop-blur-md rounded-lg   ">
+          <div className={`absolute p-6 top-15 left-1/2 transform backdrop-filter backdrop-blur-md rounded-lg ${isDarkMode ? 'bg-blue-300/50' : 'bg-white/95 shadow-lg'}`}>
             <ul className='flex flex-col py-4 space-x-4  '>
               {
                 menuItem.map((item) => (
-                  <li key={item.id} className={` text-black cursor-pointer hover:text-red-400  pl-5 ${activeSection === item.id ? "text-indigo-500" : ""}`}>
+                  <li key={item.id} className={`cursor-pointer hover:text-indigo-500 pl-5 ${isDarkMode ? 'text-black' : 'text-slate-700'} ${activeSection === item.id ? "text-indigo-500" : ""}`}>
                     <button onClick={() => handleMenuItemClick(item.id)}>
                       {item.label}
                     </button>
@@ -107,10 +128,10 @@ const handleMenuItemClick = (sectionId) => {
               }
 
               <div className="flex space-x-4 items-center mx-auto">
-                <a className='text-gray-300 hover:text-red-400' href="https://github.com/Satyam223103101" target="blank" relation="noopener noreferrer">
+                <a className={`hover:text-indigo-500 ${isDarkMode ? 'text-gray-300' : 'text-slate-700'}`} href="https://github.com/Satyam223103101" target="blank" relation="noopener noreferrer">
                   <FaGithub size={24} />
                 </a>
-                <a className='text-gray-300 hover:text-red-400' href="https://github.com/Satyam223103101" target="_blank" rel="noopener noreferrer">
+                <a className={`hover:text-indigo-500 ${isDarkMode ? 'text-gray-300' : 'text-slate-700'}`} href="https://github.com/Satyam223103101" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin size={24} />
                 </a>
 
