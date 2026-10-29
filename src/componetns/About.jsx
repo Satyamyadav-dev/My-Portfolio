@@ -1,7 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Tilt from "react-parallax-tilt";
-import profileImage from "../assets/profile image/profile.jpg";
+import profileImage from "../assets/profile image/profile.png";
 
 export const About = () => {
   return (
@@ -80,7 +80,7 @@ export const About = () => {
               background: "linear-gradient(90deg, #8245ec, #a855f7)",
               boxShadow: "0 0 2px #8245ec , 0 0 40px #8245ec",
             }}
-            href="https://drive.google.com/drive/u/0/folders/1rO9j1RO5fqCjoXlL6wl82qYKbXIkDg-Q"
+            href="https://drive.google.com/file/d/1rgVMq-GczD4Uuk5xMEIfl3jUP1X8jKIY/view?usp=sharing"
           >
             DOWNLOAD CV
           </a>
